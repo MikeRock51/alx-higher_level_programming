@@ -19,11 +19,11 @@ int check_cycle(listint_t *list)
 
 	while (snail && speed && speed->next)
 	{
-		if (speed == speed)
+		if (snail == speed)
 			return (1);
 
 		snail = snail->next;
-		speed = speed>next->next;
+		speed = speed->next->next;
 	}
 
 	return (0);
