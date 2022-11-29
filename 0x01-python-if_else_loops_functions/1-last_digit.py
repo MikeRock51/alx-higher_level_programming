@@ -5,7 +5,7 @@ if number < 0:
     last_digit = -number % 10
 else:
     last_digit = number % 10
-string = f"The last digit of {number} is {last_digit}"
+string = f"Last digit of {number} is {last_digit}"
 
 if last_digit > 5:
     print(f"{string} and is greater than 5")
