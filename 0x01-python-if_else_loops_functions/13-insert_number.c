@@ -1,13 +1,5 @@
 #include "lists.h"
 
-/*
- * insert_node - Inserts a number in a sorted linked list
- * @head: Pointer to the first element on the list
- * @number: Number to be inserted in the list
- *
- * Return: A pointer to the first item on the list.
- */
-
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *curr, *tmp, *insert = malloc(sizeof(listint_t));
@@ -19,13 +11,11 @@ listint_t *insert_node(listint_t **head, int number)
 
 	curr = *head;
 
-
-	if (curr->next == NULL)
+	if (curr == NULL)
 	{
 		curr->n = number;
 		return (*head);
 	}
-
 
 	while (curr->next != NULL)
 	{
