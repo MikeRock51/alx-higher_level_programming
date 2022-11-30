@@ -9,8 +9,6 @@ def fizzbuzz():
             print('Fizz Buzz', end='')
         else:
             print(i, end='')
-
-        if i < 100:
-            print(' ', end='')
+        print(' ', end='')
 # fizzbuzz()
 # print()
