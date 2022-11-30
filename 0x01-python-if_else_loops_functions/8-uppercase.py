@@ -8,6 +8,6 @@ def uppercase(str):
             upper += k
         else:
             upper += i
-    print(upper)
+    print('{}'.format(upper))
 
 # uppercase("best FRIENd")
