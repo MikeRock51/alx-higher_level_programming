@@ -4,8 +4,8 @@ def uppercase(str):
     for i in str:
         if ord(i) >= 97 and ord(i) <= 122:
             j = ord(i) - 32
-            k = chr(j)
-            upper += k
+            # k = chr(j)
+            upper += chr(j)
         else:
             upper += i
     print('{}'.format(upper))
