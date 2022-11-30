@@ -37,8 +37,8 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		if (curr->next->next == NULL)
 		{
-			curr->next = insert;
-			insert->next = NULL;
+			curr->next->next = insert;
+			insert->next->next = NULL;
 			break;
 		}
 		curr = curr->next;
