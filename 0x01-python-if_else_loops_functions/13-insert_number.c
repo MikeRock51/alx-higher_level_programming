@@ -11,9 +11,11 @@ listint_t *insert_node(listint_t **head, int number)
 
 	curr = *head;
 
-	if (curr == NULL)
+	if (*head == NULL)
 	{
+		curr = insert;
 		curr->n = number;
+		*head = curr;
 		return (*head);
 	}
 
