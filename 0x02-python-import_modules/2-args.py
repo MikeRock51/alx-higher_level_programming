@@ -14,4 +14,4 @@ if __name__ == "__main__":
         print('{:d} arguments:'.format(argc - 1))
         for arg in av[1:]:
             print('{:d}: {:s}'.format(i, arg))
-            i += 1;
+            i += 1
