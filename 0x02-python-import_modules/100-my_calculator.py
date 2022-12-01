@@ -6,15 +6,16 @@ if __name__ == "__main__":
     av = sys.argv
     ac = len(av)
 
-    a = int(av[1])
-    b = int(av[3])
-
     if ac != 4:
         print('Usage: ./100-my_calculator.py <a> <operator> <b>')
         sys.exit(1)
+
+    a = int(av[1])
+    b = int(av[3])
+
     if av[2] != '+' and av[2] != '-' and av[2] != '*' and av[2] != '/':
         print('Unknown operator. Available operators: +, -, * and /')
-        sys.exit
+        sys.exit(1)
 
     if av[2] == '+':
         print('{:} + {:d} = {:d}'.format(a, b, add(a, b)))
