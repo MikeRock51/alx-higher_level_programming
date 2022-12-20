@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+"""Represents a square with no functionality"""
 
 
 class Square():
-    """Represents a square with no functionality"""
+    """Does absolutely nothing"""
     pass
