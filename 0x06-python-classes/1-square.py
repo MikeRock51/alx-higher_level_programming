@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Represents a square with no functionality"""
+"""Represents a square with a private size attribute"""
 
 
 class Square():
