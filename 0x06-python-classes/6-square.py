@@ -5,22 +5,23 @@
 class Square():
     """Defines a square and validates it's size"""
     def __init__(self, size=0, position=(0, 0)):
+        """Initializes a square with the given size and position"""
         self.size = size
         self.position = position
 
-    """Returns the size of a square"""
     @property
     def size(self):
+        """Returns the size of a square"""
         return (self.__size)
 
-    """Returns the position of a square"""
     @property
     def position(self):
+        """Returns the position of a square"""
         return (self.__position)
 
-    """Sets the size of a square"""
     @size.setter
     def size(self, value):
+        """Sets the size of a square"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -28,13 +29,19 @@ class Square():
         else:
             self.__size = value
 
-    """Sets the position of a square"""
     @position.setter
     def position(self, value):
+        """Sets the position of a square"""
         if isinstance(value, tuple) and len(value) == 2:
             if isinstance(value[0], int) and isinstance(value[1], int):
                 if value[0] >= 0 and value[1] >= 0:
                     self.__position = value
+                else:
+                    raise ValueError("position must be a tuple"
+                                     "of 2 positive integers")
+            else:
+                raise TypeError("position must be a tuple of"
+                                "2 positive integers")
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
