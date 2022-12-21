@@ -35,7 +35,7 @@ class Node():
             raise TypeError("next_node must be a Node object")
 
 
-class SinglyLinkedList:
+class SinglyLinkedList(Node):
     """Defines a singly linked list"""
     def __init__(self):
         """Initializes an empty list"""
