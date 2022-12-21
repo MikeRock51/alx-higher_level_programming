@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-class Node():
+class Node:
     """Defines a node of a singly linked list"""
     def __init__(self, data, next_node=None):
         """Initializes a node and it's next field"""
@@ -35,7 +35,7 @@ class Node():
             raise TypeError("next_node must be a Node object")
 
 
-class SinglyLinkedList(Node):
+class SinglyLinkedList:
     """Defines a singly linked list"""
     def __init__(self):
         """Initializes an empty list"""
