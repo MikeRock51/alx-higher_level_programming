@@ -1,0 +1,38 @@
+Test file for add_integer module
+
+Importing the module
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Adding two positive numbers
+    >>> add_integer(50, 50)
+    100
+
+Test floating numbers
+    >>> add_integer(50.5, 50)
+    100
+
+Adding a positive and negative number
+    >>> add_integer(50, -50)
+    0
+
+Adding two negative numbers
+    >>> add_integer(-50, -50)
+    -100
+
+Passing a string to a
+    >>> add_integer("50", 50)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing a string to b
+    >>> add_integer(50, "50")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing None 
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
