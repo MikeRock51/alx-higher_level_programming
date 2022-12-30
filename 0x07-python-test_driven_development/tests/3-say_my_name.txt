@@ -1,0 +1,24 @@
+Test cases for say_my_name module
+
+Import the module
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing Normal First name and last name as string
+    >>> say_my_name("Michael", "Adebayo")
+    My name is Michael Adebayo
+
+Testing with first name alone
+    >>> say_my_name("Michael")
+    My name is Michael 
+
+Testing case first name as integer
+    >>> say_my_name(10, "Adebayo")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Testing case last_name as a float
+    >>> say_my_name("Mike", 25.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
