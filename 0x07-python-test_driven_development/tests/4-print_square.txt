@@ -16,6 +16,7 @@ Test print_square of size 1
 
 Test for printing square of size 0
     >>> print_square(0)
+    <BLANKLINE>
 
 Test with a float less than 0
     >>> print_square(0.5)

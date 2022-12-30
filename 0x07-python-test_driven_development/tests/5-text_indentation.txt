@@ -1,0 +1,99 @@
+Test Cases for text_indentation module
+
+Import the module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test with a long string
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+    ... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+    ... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+    ... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+    ... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+    ... rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+    ... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+    ... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+    ... beatiorem! Iam ruinas videres""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
+    Teneo, inquit, finem illi videri nihil dolere.
+    <BLANKLINE>
+    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+    <BLANKLINE>
+    Si id dicis, vicimus.
+    <BLANKLINE>
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
+    <BLANKLINE>
+    Sin aliud quid voles, postea.
+    <BLANKLINE>
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+    <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+Testing with leading and trailing white-space
+    >>> text_indentation("       Messi is the GOAT.    ")
+    Messi is the GOAT.
+    <BLANKLINE>
+
+Testing with leading new lines
+    >>> text_indentation("    \n\n\nMessi is the GOAT.    ")
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    Messi is the GOAT.
+    <BLANKLINE>
+
+Testing with trailing new lines
+    >>> text_indentation("    Messi is the GOAT.   \n\n\n")
+    Messi is the GOAT.
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+
+Test With a integer argument
+    >>> text_indentation(8746)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test With a None as argument
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test With a list argument
+    >>> text_indentation(["Lionel Andres Messi?", "The Greatest of all Time", 10])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test With a list argument
+    >>> text_indentation(["Lionel Andres Messi?", "The Greatest of all Time", 10])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Testing for multiple arguments
+    >>> text_indentation("Lionel Andres Messi?", "The Greatest of all Time")
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+Test with no argument
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
