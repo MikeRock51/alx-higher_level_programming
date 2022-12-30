@@ -7,8 +7,12 @@ Adding two positive numbers
     >>> add_integer(50, 50)
     100
 
-Test floating numbers
+Test floating numbers on a
     >>> add_integer(50.5, 50)
+    100
+
+Test floating numbers on a and b
+    >>> add_integer(50.5, 50.5)
     100
 
 Adding a positive and negative number
