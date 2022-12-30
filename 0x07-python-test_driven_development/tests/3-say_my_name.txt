@@ -22,3 +22,9 @@ Testing case last_name as a float
     Traceback (most recent call last):
         ...
     TypeError: last_name must be a string
+
+Testing for no argument passed
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'

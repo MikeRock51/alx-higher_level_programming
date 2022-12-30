@@ -40,3 +40,9 @@ Passing None
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+Testing for no argument passed
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
