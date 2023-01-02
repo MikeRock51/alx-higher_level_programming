@@ -92,4 +92,13 @@ class Rectangle:
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
     def bigger_or_equal(rect_1, rect_2):
-        
+        """Returns the biggest of 2 instances of a rectangle"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
+            return (rect_1)
+        else:
+            return (rect_2)
