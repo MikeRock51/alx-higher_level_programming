@@ -73,7 +73,7 @@ class Rectangle:
             return (0)
         return (2 * (self.__width + self.__height))
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Returns string representation of a rectangle with the # character"""
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -90,3 +90,6 @@ class Rectangle:
         """Returns string representation of the triangle to
         recreate a new instance with eval"""
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+
+    def bigger_or_equal(rect_1, rect_2):
+        
