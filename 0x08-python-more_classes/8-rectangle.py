@@ -91,6 +91,7 @@ class Rectangle:
         recreate a new instance with eval"""
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Returns the biggest of 2 instances of a rectangle"""
         if not isinstance(rect_1, Rectangle):
