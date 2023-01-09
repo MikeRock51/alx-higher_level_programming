@@ -90,4 +90,3 @@ Checking for method docstring:
 	  >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
           >>> len(mod2) > 1
           True
-
