@@ -1,0 +1,74 @@
+Test cases for 7-base_geometry module
+
+Import the module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test common case:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+
+Test string value:
+    >>> bg.integer_validator("my_string", "12")
+    Traceback (most recent call last):
+        ...
+    TypeError: my_string must be an integer
+
+Test bool value:
+    >>> bg.integer_validator("my_bool", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: my_bool must be an integer
+
+Test float value:
+    >>> bg.integer_validator("my_float", 20.17)
+    Traceback (most recent call last):
+        ...
+    TypeError: my_float must be an integer
+
+Test list value:
+    >>> bg.integer_validator("my_list", [20.17, 10, 5])
+    Traceback (most recent call last):
+        ...
+    TypeError: my_list must be an integer
+
+Test dictionary value:
+    >>> bg.integer_validator("my_dict", {"value": 10})
+    Traceback (most recent call last):
+        ...
+    TypeError: my_dict must be an integer
+
+Test tuple value:
+    >>> bg.integer_validator("my_tuple", (10, 58, 1))
+    Traceback (most recent call last):
+        ...
+    TypeError: my_tuple must be an integer
+
+Test complex value:
+    >>> bg.integer_validator("my_complex", complex(10, 58))
+    Traceback (most recent call last):
+        ...
+    TypeError: my_complex must be an integer
+
+Test zero value:
+    >>> bg.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: my_int must be greater than 0
+
+Test negative value:
+    >>> bg.integer_validator("my_int", -1)
+    Traceback (most recent call last):
+        ...
+    ValueError: my_int must be greater than 0
+
+Test area method:
+	>>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+Test passing argument to area method:
+	>>> bg.area(51)
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
