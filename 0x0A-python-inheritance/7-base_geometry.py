@@ -2,7 +2,7 @@
 """A module containing a class called BaseGeometry"""
 
 
-class BaseGeometry(object):
+class BaseGeometry:
     """A class with some methods that raises an exception
     and validates integer respectively"""
 
