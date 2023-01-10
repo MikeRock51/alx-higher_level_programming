@@ -4,4 +4,4 @@ BaseGeometry = __import__('7-base-geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    pass
+    """A rectangle subclass to BaseGeometry"""
