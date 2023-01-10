@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-read_file = __import__('0-read_file').read_file
+append_write = __import__('2-append_write').append_write
 
-read_file("my_file_0.txt")
+nb_characters_added = append_write("file_append.txt", "This School is so cool!\n")
+print(nb_characters_added)
