@@ -7,7 +7,7 @@ def pascal_triangle(n):
     the Pascal’s triangle of n"""
 
     if n <= 0:
-        return (0)
+        return []
 
     triangle = []
 
