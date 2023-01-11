@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """
 12-main
 """
@@ -15,3 +16,8 @@ def print_triangle(triangle):
 if __name__ == "__main__":
     print_triangle(pascal_triangle(5))
     
+=======
+append_after = __import__('100-append_after').append_after
+
+append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
+>>>>>>> 66bc6ca31e56ec9ec19c3c4aa03bb1416a3be32f
