@@ -93,27 +93,23 @@ class Rectangle(Base):
 
     def __str__(self):
         """Overides default __str__ method"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format\
-            (self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format
+                (self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """Assigns argument to each attribute"""
 
+        attribute_keys = {"id", "width", "height", "x", "y"}
         if args and len(args) > 0:
-            index = 0
-            for arg in args:
-                if index == 0:
-                    self.id = arg
-                elif index == 1:
-                    self.__width = arg
-                elif index == 2:
-                    self.__height = arg
-                elif index == 3:
-                    self.__x = arg
-                elif index == 4:
-                    self.__y = arg
-                index += 1
+            for index in range(len(args)):
+                setattr(self, attribute_keys[index], args[index])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-            
+
+    def to_dictionary(self):
+        """Returns a dictionary representation of a Rectangle"""
+
+        rect_dict = {'id': self.id, 'width': self.__width, 'height':
+                     self.__height, 'x': self.__x, 'y': self.__y}
+        return rect_dict
