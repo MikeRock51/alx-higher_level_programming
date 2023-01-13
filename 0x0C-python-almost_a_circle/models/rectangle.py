@@ -95,28 +95,28 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format\
             (self.id, self.__x, self.__y, self.__width, self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns argument to each attribute"""
-        attributes_keys = ['self.id', 'self.__width', 'self.__height', 'self.__x', 'self.__y']
-        attributes_dict = {}
-        index = 0
-        if len(args) == 5:
-            self.__init__(*args)
-        for arg in args:
-            if index == 0:
-                self.id = arg
-            elif index == 1:
-                self.__width = arg
-            elif index == 2:
-                self.__height = arg
-            elif index == 3:
-                self.__x = arg
-            elif index == 4:
-                self.__y = arg
-            index += 1
 
-
-            # attributes_dict[attributes_keys[index]] = arg
-            # print(attributes_dict[attributes_keys[index]])
+        if args:
+            index = 0
+            if len(args) == 5:
+                self.__init__(*args)
+            for arg in args:
+                if index == 0:
+                    self.id = arg
+                elif index == 1:
+                    self.__width = arg
+                elif index == 2:
+                    self.__height = arg
+                elif index == 3:
+                    self.__x = arg
+                elif index == 4:
+                    self.__y = arg
+                index += 1
+        else:
+            if len(kwargs) == 5:
+                self.__init__(**kwargs)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
             
-        # self.__init__(**attributes_dict)
