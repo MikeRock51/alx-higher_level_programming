@@ -100,8 +100,6 @@ class Rectangle(Base):
 
         if args:
             index = 0
-            if len(args) == 5:
-                self.__init__(*args)
             for arg in args:
                 if index == 0:
                     self.id = arg
@@ -115,8 +113,6 @@ class Rectangle(Base):
                     self.__y = arg
                 index += 1
         else:
-            if len(kwargs) == 5:
-                self.__init__(**kwargs)
             for key, value in kwargs.items():
                 setattr(self, key, value)
             
