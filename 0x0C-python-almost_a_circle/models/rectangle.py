@@ -97,12 +97,26 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Assigns argument to each attribute"""
-        attributes_keys = ['id', 'width', 'height', 'x', 'y']
+        attributes_keys = ['self.id', 'self.__width', 'self.__height', 'self.__x', 'self.__y']
         attributes_dict = {}
         index = 0
-
+        if len(args) == 5:
+            self.__init__(*args)
         for arg in args:
-            attributes_dict[attributes_keys[index]] = arg
-            # print(attributes_dict[attributes_keys[index]])
+            if index == 0:
+                self.id = arg
+            elif index == 1:
+                self.__width = arg
+            elif index == 2:
+                self.__height = arg
+            elif index == 3:
+                self.__x = arg
+            elif index == 4:
+                self.__y = arg
             index += 1
-        self.__init__(**attributes_dict)
+
+
+            # attributes_dict[attributes_keys[index]] = arg
+            # print(attributes_dict[attributes_keys[index]])
+            
+        # self.__init__(**attributes_dict)
