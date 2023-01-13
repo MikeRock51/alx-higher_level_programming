@@ -92,6 +92,7 @@ class Rectangle(Base):
             i += 1
 
     def __str__(self):
+        """Overides default __str__ method"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format\
             (self.id, self.__x, self.__y, self.__width, self.__height))
 
