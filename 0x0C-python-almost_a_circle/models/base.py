@@ -63,4 +63,4 @@ class Base:
             json_str_list = f.read()
 
         for str in json_str_list:
-
+            json_dict_list.append()
