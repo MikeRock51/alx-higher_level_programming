@@ -2,6 +2,7 @@
 """This module contains the base class for this project"""
 
 import json
+import os
 
 
 class Base:
@@ -49,3 +50,17 @@ class Base:
         dummy = cls(8, 6, 10)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        instance_file = '{}.json'.format(cls.__name__)
+        json_dict_list = []
+
+        if not os.path.exists(instance_file):
+            return '"[]"'
+
+        with open(instance_file, 'r', encoding="utf-8") as f:
+            json_str_list = f.read()
+
+        for str in json_str_list:
+
