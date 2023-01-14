@@ -9,7 +9,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Base object contructor"""
+        """Base object constructor"""
         if id is not None:
             self.id = id
         else:
@@ -27,7 +27,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string respresentation of list_obj to a file"""
+        """Writes the JSON string representation of list_obj to a file"""
 
         list_dict = []
         with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as f:
@@ -42,3 +42,10 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return '"[]"'
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with attributes already set"""
+        dummy = cls(8, 6, 10)
+        dummy.update(**dictionary)
+        return dummy
