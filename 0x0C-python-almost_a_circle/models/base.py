@@ -93,6 +93,10 @@ class Base:
         """Deserializes an object list from a csv file"""
 
         file_name = '{}.csv'.format(cls.__name__)
+        if file_name == "Rectangle.csv":
+            fieldnames = ['id', 'width', 'height', 'x', 'y']
+        else:
+            fieldnames = ['id', 'size', 'x', 'y']
         with open(file_name, 'r') as csvfile:
-            csv_reader = csv.DictReader(csvfile)
-            
+            csv_reader = csv.DictReader(csvfile, fieldnames=fieldnames)
+            return csv_reader
