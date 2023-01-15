@@ -93,3 +93,6 @@ class Base:
         """Deserializes an object list from a csv file"""
 
         file_name = '{}.csv'.format(cls.__name__)
+        with open(file_name, 'r') as csvfile:
+            csv_reader = csv.DictReader(csvfile)
+            
