@@ -4,6 +4,7 @@
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -105,3 +106,39 @@ class Base:
             csv_dict = [dict([key, int(value)] for key, value in c_dict.items()) for c_dict in csv_reader]
 
         return (cls.create(**obj) for obj in csv_dict)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw shapes using the turtle module"""
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#1f1111")
+        turt.pensize(3)
+        turt.shape("turtle")
+
+        turt.color("#1f1111")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#a5c472")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()
