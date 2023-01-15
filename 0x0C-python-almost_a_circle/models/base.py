@@ -99,4 +99,7 @@ class Base:
             fieldnames = ['id', 'size', 'x', 'y']
         with open(file_name, 'r') as csvfile:
             csv_reader = csv.DictReader(csvfile, fieldnames=fieldnames)
-            return csv_reader
+            csv_dict = [[key, int(value)] for key, value in csv_reader.items()]
+
+        for obj in csv_dict:
+            return cls.create(**obj)
