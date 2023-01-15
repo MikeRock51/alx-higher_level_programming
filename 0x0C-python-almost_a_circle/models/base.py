@@ -93,13 +93,15 @@ class Base:
         """Deserializes an object list from a csv file"""
 
         file_name = '{}.csv'.format(cls.__name__)
+        if not os.path.exists(file_name):
+            return []
+
         if file_name == "Rectangle.csv":
             fieldnames = ['id', 'width', 'height', 'x', 'y']
         else:
             fieldnames = ['id', 'size', 'x', 'y']
         with open(file_name, 'r') as csvfile:
             csv_reader = csv.DictReader(csvfile, fieldnames=fieldnames)
-            csv_dict = [[key, int(value)] for key, value in csv_reader.items()]
+            csv_dict = [dict([key, int(value)] for key, value in c_dict.items()) for c_dict in csv_reader]
 
-        for obj in csv_dict:
-            return cls.create(**obj)
+        return (cls.create(**obj) for obj in csv_dict)
