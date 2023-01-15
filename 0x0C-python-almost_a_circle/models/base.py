@@ -3,6 +3,7 @@
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -22,7 +23,7 @@ class Base:
         """Returns the JSON string representation of list-dictionary"""
         json_list = []
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return '"[]"'
+            return '[]'
 
         return json.dumps(list_dictionaries)
 
@@ -33,15 +34,16 @@ class Base:
         list_dict = []
         with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as f:
             if list_objs is None:
-                f.write('"[]"')
+                f.write('[]')
             else:
                 for obj in list_objs:
                     list_dict.append(obj.to_dictionary())
                 f.write(Base.to_json_string(list_dict))
 
     def from_json_string(json_string):
+        """Returns a list of JSON string representation of json_string"""
         if json_string is None or len(json_string) == 0:
-            return '"[]"'
+            return '[]'
         return json.loads(json_string)
 
     @classmethod
@@ -68,3 +70,26 @@ class Base:
         for dic in json_dict_list:
             instance_list.append(cls.create(**dic))
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes an object list to a csv file"""
+
+        file_name = '{}.csv'.format(cls.__name__)
+        with open(file_name, 'w', newline='') as csvfile:
+            if list_objs is None or len(list_objs) == 0:
+                csvfile.write('[]')
+            else:
+                if file_name == "Rectangle.csv":
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+                csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for dic in list_objs:
+                    csv_writer.writerow(dic.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes an object list from a csv file"""
+
+        file_name = '{}.csv'.format(cls.__name__)
