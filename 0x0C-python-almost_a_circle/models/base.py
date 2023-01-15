@@ -53,8 +53,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Returns a list of instances"""
         instance_file = '{}.json'.format(cls.__name__)
-        json_dict_list = []
+        instance_list = []
 
         if not os.path.exists(instance_file):
             return '"[]"'
@@ -62,5 +63,8 @@ class Base:
         with open(instance_file, 'r', encoding="utf-8") as f:
             json_str_list = f.read()
 
-        for str in json_str_list:
-            json_dict_list.append()
+        json_dict_list = Base.from_json_string(json_str_list)
+
+        for dic in json_dict_list:
+            instance_list.append(cls.create(**dic))
+        return instance_list
