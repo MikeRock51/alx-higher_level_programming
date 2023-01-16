@@ -263,7 +263,6 @@ class test_square(unittest.TestCase):
         '''
             Testing the update method with **kwargs
         '''
-        # self.assertEqual(self.s.id, "str")
         with self.assertRaises(TypeError):
             self.s.update("str")
 

@@ -1,41 +1,29 @@
 #!/usr/bin/python3
-""" 100-main """
-from models.rectangle import Rectangle
+""" 11-main """
 from models.square import Square
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(10, 7, 2, 8)
-    r2 = Rectangle(2, 4)
-    list_rectangles_input = [r1, r2]
-
-    Rectangle.save_to_file_csv(list_rectangles_input)
-
-    list_rectangles_output = Rectangle.load_from_file_csv()
-
-    for rect in list_rectangles_input:
-        print("[{}] {}".format(id(rect), rect))
-
-    print("---")
-
-    for rect in list_rectangles_output:
-        print("[{}] {}".format(id(rect), rect))
-
-    print("---")
-    print("---")
-
     s1 = Square(5)
-    s2 = Square(7, 9, 1)
-    list_squares_input = [s1, s2]
+    print(s1)
 
-    Square.save_to_file_csv(list_squares_input)
+    s1.update(10)
+    print(s1)
 
-    list_squares_output = Square.load_from_file_csv()
+    s1.update(1, 2)
+    print(s1)
 
-    for square in list_squares_input:
-        print("[{}] {}".format(id(square), square))
+    s1.update(1, 2, 3)
+    print(s1)
 
-    print("---")
+    s1.update(1, 2, 3, 4)
+    print(s1)
 
-    for square in list_squares_output:
-        print("[{}] {}".format(id(square), square))
+    s1.update(x=12)
+    print(s1)
+
+    s1.update(size=7, y=1)
+    print(s1)
+
+    s1.update(size=7, id=89, y=1)
+    print(s1)
