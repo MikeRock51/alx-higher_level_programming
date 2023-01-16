@@ -109,7 +109,7 @@ class Base:
             csv_dict = [dict([key, int(value)] for key,
                              value in c_dict.items()) for c_dict in csv_reader]
 
-        return (cls.create(**obj) for obj in csv_dict)
+        return (cls.create(**c_dict) for c_dict in csv_dict)
 
     @staticmethod
     def draw(list_rectangles, list_squares):
