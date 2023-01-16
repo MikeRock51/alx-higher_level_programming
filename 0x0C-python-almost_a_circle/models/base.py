@@ -64,7 +64,7 @@ class Base:
         instance_list = []
 
         if not os.path.exists(instance_file):
-            return '"[]"'
+            return []
 
         with open(instance_file, 'r', encoding="utf-8") as f:
             json_str_list = f.read()
