@@ -82,7 +82,7 @@ class Base:
         file_name = '{}.csv'.format(cls.__name__)
         with open(file_name, 'w', newline='') as csvfile:
             if list_objs is None or len(list_objs) == 0:
-                csvfile.write([])
+                csvfile.write("[]")
             else:
                 if file_name == "Rectangle.csv":
                     fieldnames = ['id', 'width', 'height', 'x', 'y']
