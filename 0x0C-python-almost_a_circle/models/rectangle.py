@@ -25,7 +25,7 @@ class Rectangle(Base):
     def width(self, value):
         """Width setter method"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -40,7 +40,7 @@ class Rectangle(Base):
     def height(self, value):
         """Height setter method"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -56,7 +56,7 @@ class Rectangle(Base):
     def x(self, value):
         """X setter method"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -71,7 +71,7 @@ class Rectangle(Base):
     def y(self, value):
         """Y setter method"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -99,7 +99,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Assigns argument to each attribute"""
 
-        attribute_keys = {"id", "width", "height", "x", "y"}
+        attribute_keys = ["id", "width", "height", "x", "y"]
         if args and len(args) > 0:
             for index in range(len(args)):
                 setattr(self, attribute_keys[index], args[index])
