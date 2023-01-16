@@ -50,7 +50,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance with attributes already set"""
-        dummy = cls(8, 6, 10)
+        if cls.__name__ == "Square":
+            dummy = cls(8, 8)
+        else:
+            dummy = cls(8, 6, 10)
         dummy.update(**dictionary)
         return dummy
 
