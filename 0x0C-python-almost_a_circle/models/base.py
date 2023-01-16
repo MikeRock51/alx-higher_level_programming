@@ -35,7 +35,7 @@ class Base:
         list_dict = []
         with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as f:
             if list_objs is None:
-                f.write('[]')
+                f.write([])
             else:
                 for obj in list_objs:
                     list_dict.append(obj.to_dictionary())
@@ -44,7 +44,7 @@ class Base:
     def from_json_string(json_string):
         """Returns a list of JSON string representation of json_string"""
         if json_string is None or len(json_string) == 0:
-            return '[]'
+            return []
         return json.loads(json_string)
 
     @classmethod
