@@ -379,29 +379,29 @@ class test_rectangle(unittest.TestCase):
             pass
 
     def test_json_string_type(self):
-            '''
-                Testing the returned type
-            '''
-            list_input = [
-                {'id': 2089, 'width': 10, 'height': 4},
-                {'id': 2712, 'width': 1, 'height': 7}]
-            json_list_input = Rectangle.to_json_string(list_input)
-            list_output = Rectangle.from_json_string(json_list_input)
-            self.assertEqual(type(list_input), list)
+        '''
+            Testing the returned type
+        '''
+        list_input = [
+            {'id': 2089, 'width': 10, 'height': 4},
+            {'id': 2712, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(type(list_input), list)
 
     def test_json_string(self):
-            '''
-                Testing that the json string gets converted into a list
-            '''
-            list_input = [
-                {'id': 2089, 'width': 10, 'height': 4},
-                {'id': 2712, 'width': 1, 'height': 7}]
-            json_list_input = Rectangle.to_json_string(list_input)
-            list_output = Rectangle.from_json_string(json_list_input)
-            s1 = {'id': 2089, 'width': 10, 'height': 4}
-            s2 = {'height': 7, 'id': 2712, 'width': 1}
-            self.assertEqual(list_input[0], s1)
-            self.assertEqual(list_input[1], s2)
+        '''
+            Testing that the json string gets converted into a list
+        '''
+        list_input = [
+            {'id': 2089, 'width': 10, 'height': 4},
+            {'id': 2712, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        s1 = {'id': 2089, 'width': 10, 'height': 4}
+        s2 = {'height': 7, 'id': 2712, 'width': 1}
+        self.assertEqual(list_input[0], s1)
+        self.assertEqual(list_input[1], s2)
 
     def test_dict_to_instance(self):
         '''
@@ -532,6 +532,7 @@ class test_rectangle(unittest.TestCase):
         output = '###\n###\n###\n###\n###\n###\n###\n'
         self.assertEqual(capturedOutput.getvalue(), output)
 
+
 class TestRectangle(unittest.TestCase):
     """
     class for testing Rectangle class' methods
@@ -544,7 +545,6 @@ class TestRectangle(unittest.TestCase):
         """
         cls.setup = inspect.getmembers(Rectangle, inspect.isfunction)
 
-    
     def test_module_docstring(self):
         """
         Tests if module docstring documentation exist
@@ -675,6 +675,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(R_dict['x'], 300)
         self.assertEqual(R_dict['y'], 400)
         self.assertEqual(R_dict['id'], 500)
+
 
 class TestRectangle_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Rectangle class."""
@@ -1456,6 +1457,7 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
+
 
 if __name__ == "__main__":
     unittest.main()
