@@ -1,28 +1,16 @@
 #!/usr/bin/node
 
 /**
- * A square Module
+ * Returns the number of occurrences in a list
  */
 
-const Rectangle = require('./4-rectangle');
+exports.nbOccurences = function (list, searchElement) {
+  let occurrences = 0;
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-
-  charPrint (c) {
-    if (!c) { c = 'X'; }
-
-    for (let i = 0; i < this.width; i++) {
-      // console.log("WIII");
-      let line = '';
-      for (let j = 0; j < this.width; j++) {
-        line += c;
-      }
-      console.log(line);
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === searchElement) {
+      occurrences++;
     }
   }
-}
-
-module.exports = Square;
+  return (occurrences);
+};
