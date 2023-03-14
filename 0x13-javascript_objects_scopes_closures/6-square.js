@@ -4,13 +4,9 @@
  * A square Module
  */
 
-const Rectangle = require('./4-rectangle');
+const firstSquare = require('./5-square');
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-
+class Square extends firstSquare {
   charPrint (c) {
     if (!c) { c = 'X'; }
 
