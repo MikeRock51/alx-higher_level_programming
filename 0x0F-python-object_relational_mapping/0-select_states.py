@@ -6,6 +6,8 @@ from sys import argv
 """A script that lists all states from the database hbtn_0e_0_usa"""
 
 if __name__ == "__main__":
+    """Connects and fetches data from the database"""
+
     userName = argv[1]
     passWord = argv[2]
     dbName = argv[3]
