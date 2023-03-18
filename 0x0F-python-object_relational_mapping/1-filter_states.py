@@ -28,8 +28,7 @@ if __name__ == '__main__':
 
     db_cursor = db_conn.cursor()
     db_cursor.execute(
-        "SELECT * from states WHERE SUBSTR(states.name,\
-              1, 1) = 'N'")
+        "SELECT * from states WHERE SUBSTR(states.name, 1, 1) = 'N'")
     states = db_cursor.fetchall()
 
     for state in states:
