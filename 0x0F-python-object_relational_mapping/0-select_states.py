@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 
+"""A script that lists all states from the database hbtn_0e_0_usa"""
+
 import MySQLdb
 from sys import argv
-
-"""A script that lists all states from the database hbtn_0e_0_usa"""
 
 if __name__ == '__main__':
     """Connects and fetches data from the database hbtn_0e_0_usa"""
 
-    # userName = argv[1]
-    # passWord = argv[2]
-    # dbName = argv[3]
+    userName = argv[1]
+    passWord = argv[2]
+    dbName = argv[3]
 
-    # db_conn = MySQLdb.connect(host='localhost', port=3306,
-    #                      user=userName, passwd=passWord, db=dbName)
-    db_conn = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    db_conn = MySQLdb.connect(host='localhost', port=3306,
+                              user=userName, passwd=passWord, db=dbName)
     db_cursor = db_conn.cursor()
     db_cursor.execute("SELECT * from states")
     states = db_cursor.fetchall()

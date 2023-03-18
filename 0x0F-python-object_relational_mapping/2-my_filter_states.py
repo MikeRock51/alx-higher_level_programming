@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import MySQLdb
-from sys import argv
-
 """
 Write a script that takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa where name matches the argument.
@@ -16,6 +13,11 @@ in the states table of hbtn_0e_0_usa where name matches the argument.
     Results must be sorted in ascending order by states.id
     Results must be displayed as they are in the example below
     Your code should not be executed when imported"""
+
+
+import MySQLdb
+from sys import argv
+
 
 if __name__ == "__main__":
     """Allows the module to be imported without running"""

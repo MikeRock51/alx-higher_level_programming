@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-from sys import argv
-import MySQLdb
 
 """
 Write a script that lists all states with a name starting
@@ -14,6 +12,9 @@ with N (upper N) from the database hbtn_0e_0_usa:
     Results must be displayed as they are in the example below
     Your code should not be executed when imported
 """
+
+from sys import argv
+import MySQLdb
 
 if __name__ == '__main__':
     """Allows the module to be imported without running"""
