@@ -16,6 +16,8 @@ with N (upper N) from the database hbtn_0e_0_usa:
 """
 
 if __name__ == '__main__':
+    """Allows the module to be imported without running"""
+
     userName = argv[1]
     passWord = argv[2]
     dbName = argv[3]
