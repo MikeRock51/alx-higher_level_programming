@@ -20,12 +20,13 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    session.add(State(name="Louisiana"))
+    new_state = State(name="Louisiana")
+    session.add(new_state)
     session.commit()
 
-    new_state = session.query(State).filter(State.name == "Louisiana").all()
+    # new_state = session.query(State).filter(State.name == "Louisiana").all()
 
-    for state in new_state:
-        print(state.id)
+    # for state in new_state:
+    print(new_state.id)
 
     session.close()
