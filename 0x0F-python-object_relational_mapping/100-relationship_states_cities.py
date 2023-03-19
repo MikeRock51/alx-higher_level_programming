@@ -6,7 +6,7 @@ A script that creates the State “California” with the City
 
 from sys import argv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from relationship_state import Base, State
 from relationship_city import City
 
@@ -21,10 +21,9 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    city2add = City(name='California')
-    state2add = State(name='San Francisco')
+    session = Session(engine)
+    city2add = City(name='San Francisco')
+    state2add = State(name='California')
     state2add.cities.append(city2add)
     session.add(state2add)
 
