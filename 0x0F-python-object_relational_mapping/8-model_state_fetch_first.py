@@ -15,8 +15,8 @@ if __name__ == "__main__":
     dbName = argv[3]
 
     engine = create_engine(
-        f'mysql+mysqldb://{userName}:{passWord}@localhost/{dbName}',
-        pool_pre_ping=True)
+        'mysql+mysqldb://{}:{}@localhost/{}'
+        .format(userName, passWord, dbName), pool_pre_ping=True)
     session = Session(engine)
 
     state = session.query(State).first()
