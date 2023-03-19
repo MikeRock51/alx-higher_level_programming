@@ -7,6 +7,7 @@ A script that contains the class definition of a City
 from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base, State
 
+
 class City(Base):
     """
     A class definition of a City
