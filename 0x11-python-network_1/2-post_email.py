@@ -17,4 +17,4 @@ if __name__ == "__main__":
     with urlopen(req) as response:
         body = response.read()
 
-    print(body)
+    print(response.decode('utf-8'))
