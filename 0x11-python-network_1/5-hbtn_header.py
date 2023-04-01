@@ -10,5 +10,7 @@ if __name__ == "__main__":
     from sys import argv
 
     res = requests.get(argv[1])
-    if hasattr(res, 'X-Request-Id'):
-        print(res.headers["X-Request-Id"])
+    for key, value in res.headers.items():
+        if key == 'X-Request-Id':
+            print(value)
+            break
