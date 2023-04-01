@@ -11,4 +11,4 @@ with urlopen('https://alx-intranet.hbtn.io/status') as response:
 print("Body response:")
 print(f"    - type: {type(body)}")
 print(f"    - content: {body}")
-print(f"    - utf-8 content: {body.decode()}")
+print(f"    - utf8 content: {body.decode()}")
