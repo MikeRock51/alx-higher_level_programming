@@ -8,7 +8,7 @@ const url = process.argv[2];
 const wedgeUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, (error, response, body) => {
-  if (error) console.log(error);
+  if (error) pass;
   const filmInfo = JSON.parse(body).results;
   let movieCount = 0;
   for (let i = 0; i < filmInfo.length; i++) {
