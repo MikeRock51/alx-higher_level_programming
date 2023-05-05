@@ -8,10 +8,15 @@
     <header> 
       First HTML page
     </header>
-    <div id="red_header">Red header</div>
+    <br />
+    <div id="add_item">Add item</div>
+    <br />
+    <ul class="my_list">
+      <li>Item</li>
+    </ul>
     <footer>
       Holberton School - 2017
     </footer>
-    <script type="text/javascript" src="2-script.js"></script>
+    <script type="text/javascript" src="5-script.js"></script>
   </body>
 </html>
