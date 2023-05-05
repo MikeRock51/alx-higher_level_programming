@@ -6,5 +6,8 @@ $.ajax({
 		for (title of response.results) {
 			$('ul#list_movies').append(`<li>${title.title}</li>`);
 		}
+	},
+	error: (xhr, status, error) => {
+		console.log(error);
 	}
 });
