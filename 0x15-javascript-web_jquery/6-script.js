@@ -1,6 +1,6 @@
 const header = $('header');
-const trigger = $('div#toggle_header');
+const trigger = $('div#update_header');
 
 trigger.on('click', () => {
-	header.toggleClass('green red');
+	header.text('New Header!!!');
 });
